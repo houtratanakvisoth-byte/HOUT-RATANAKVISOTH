@@ -1,0 +1,17 @@
+name = "mrsoth-blog"
+main = "worker/index.js"
+compatibility_date = "2024-04-01"
+
+# Serve static build from Vite dist directory
+[site]
+bucket = "./dist"
+
+# Cloudflare R2 Bucket Binding for uploaded images & PDF documents
+[[r2_buckets]]
+binding = "R2_BUCKET"
+bucket_name = "mrsoth-blog-assets"
+
+# Environment Variables
+[vars]
+VITE_SUPABASE_URL = "https://your-project-ref.supabase.co"
+VITE_SUPABASE_ANON_KEY = "your-anon-key"
